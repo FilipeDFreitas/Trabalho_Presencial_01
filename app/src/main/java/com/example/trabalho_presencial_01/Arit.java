@@ -72,7 +72,7 @@ public class Arit extends AppCompatActivity {
         if(input == result) {
             AlertDialog.Builder dialog =
                     new AlertDialog.Builder(Arit.this);
-            dialog.setTitle("Confirm delete");
+            dialog.setTitle("Success");
             dialog.setMessage("Congratulations! Your answer is right!");
             dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override
@@ -94,7 +94,7 @@ public class Arit extends AppCompatActivity {
         } else {
             AlertDialog.Builder dialog =
                     new AlertDialog.Builder(Arit.this);
-            dialog.setTitle("Confirm delete");
+            dialog.setTitle("Failure");
             dialog.setMessage("I'm sorry! Your answer is wrong!");
             dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override
