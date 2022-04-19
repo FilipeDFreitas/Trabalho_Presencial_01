@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         Aritbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                startActivity(new Intent(MainActivity.this, MyOtherActivity.class));
+               startActivity(new Intent(MainActivity.this, Arit.class));
             }
         });
     }
