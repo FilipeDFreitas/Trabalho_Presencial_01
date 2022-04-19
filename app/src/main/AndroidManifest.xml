@@ -13,6 +13,9 @@
             android:name=".Result"
             android:exported="false" />
         <activity
+            android:name=".Arit"
+            android:exported="false" />
+        <activity
             android:name=".HigherNumber"
             android:exported="false" />
         <activity

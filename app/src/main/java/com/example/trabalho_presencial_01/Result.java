@@ -1,9 +1,12 @@
 package com.example.trabalho_presencial_01;
-
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class Result extends AppCompatActivity {
 
@@ -18,5 +21,9 @@ public class Result extends AppCompatActivity {
         points = (Integer) getIntent().getSerializableExtra("points");
         result = findViewById(R.id.resultOutput);
         result.setText("You've made " + points + " points.");
+    }
+    public void returnMenu(View view){
+        Intent intent = new Intent(Result.this, MainActivity.class);
+        startActivity(intent);
     }
 }
