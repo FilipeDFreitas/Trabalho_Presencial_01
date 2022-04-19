@@ -19,13 +19,13 @@ public class MainActivity extends AppCompatActivity {
         Maiorbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, MyOtherActivity.class));
+                startActivity(new Intent(MainActivity.this, HigherNumber.class));
             }
         });
         Aritbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, MyOtherActivity.class));
+                startActivity(new Intent(MainActivity.this, Arit.class));
             }
         });
     }

@@ -23,12 +23,12 @@ public class HigherNumber extends AppCompatActivity {
         number2 = findViewById(R.id.number2);
         number3 = findViewById(R.id.number3);
         answer = findViewById(R.id.answer);
-
+        calculate();
 
     }
 
 
-    public void calculate(View view) {
+    public void calculate() {
         Random r = new Random();
         int number1Random = r.nextInt(10);
         int number2Random = r.nextInt(10);

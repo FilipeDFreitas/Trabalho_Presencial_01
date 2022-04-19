@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Trabalho_Presencial_01">
         <activity
+            android:name=".Result"
+            android:exported="false" />
+        <activity
+            android:name=".Arit"
+            android:exported="false" />
+        <activity
             android:name=".HigherNumber"
             android:exported="false" />
         <activity
