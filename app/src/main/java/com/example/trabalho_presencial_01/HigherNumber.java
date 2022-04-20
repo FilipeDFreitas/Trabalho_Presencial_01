@@ -37,7 +37,23 @@ public class HigherNumber extends AppCompatActivity {
         btnCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                calculate();
+                if (answer.getText().toString().equals("")) {
+                    AlertDialog.Builder dialog =
+                            new AlertDialog.Builder(HigherNumber.this);
+                    dialog.setTitle("Empty Text");
+                    dialog.setMessage("Please fill out this field");
+                    dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            answer.setFocusableInTouchMode(true);
+                            answer.requestFocus();
+                        }
+                    });
+                    dialog.create();
+                    dialog.show();
+                } else {
+                    calculate();
+                }
             }
         });
     }
@@ -70,6 +86,7 @@ public class HigherNumber extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         points = points + 20;
+                        answer.setText("");
                         if (counter < 5) {
                             getRandom();
                         }
@@ -87,10 +104,11 @@ public class HigherNumber extends AppCompatActivity {
                 AlertDialog.Builder dialog =
                         new AlertDialog.Builder(HigherNumber.this);
                 dialog.setTitle("");
-                dialog.setMessage("What a pity! your answer is wrong!");
+                dialog.setMessage("I'm sorry! your answer is wrong!");
                 dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        answer.setText("");
                         if (counter < 5) {
                             getRandom();
                         }

@@ -20,7 +20,11 @@ public class Result extends AppCompatActivity {
 
         points = (Integer) getIntent().getSerializableExtra("points");
         result = findViewById(R.id.resultOutput);
-        result.setText("You've made " + points + " points.");
+        if (points == 100) {
+            result.setText("You've made " + points + " points. \n YOU ROCK IT!");
+        } else {
+            result.setText("You've made " + points + " points.");
+        }
     }
     public void returnMenu(View view){
         Intent intent = new Intent(Result.this, MainActivity.class);

@@ -38,12 +38,28 @@ public class Arit extends AppCompatActivity {
 
         randomAritmetic();
 
-//        answerButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                getAnswer();
-//            }
-//        });
+        answerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (answerInput.getText().toString().equals("")) {
+                    AlertDialog.Builder dialog =
+                            new AlertDialog.Builder(Arit.this);
+                    dialog.setTitle("Empty Text");
+                    dialog.setMessage("Please fill out this field");
+                    dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            answerInput.setFocusableInTouchMode(true);
+                            answerInput.requestFocus();
+                        }
+                    });
+                    dialog.create();
+                    dialog.show();
+                } else {
+                    getAnswer();
+                }
+            }
+        });
     }
 
     static String getRandom(String[] arr) {
@@ -60,8 +76,7 @@ public class Arit extends AppCompatActivity {
         aritmeticOutput.setText(String.valueOf(number1) + " " + symbol + " " + String.valueOf(number2));
     }
 
-    public void getAnswer(View view){
-
+    public void getAnswer(){
         int result = 0;
         if (symbol.equals("+")) {
             result = number1 + number2;
@@ -78,6 +93,7 @@ public class Arit extends AppCompatActivity {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     points = points + 20;
+                    answerInput.setText("");
                     if (counter < 5) {
                         randomAritmetic();
                     }
@@ -99,6 +115,7 @@ public class Arit extends AppCompatActivity {
             dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
+                    answerInput.setText("");
                     if (counter < 5) {
                         randomAritmetic();
                     }
